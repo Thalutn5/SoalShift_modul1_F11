@@ -17,8 +17,14 @@ Untuk penyelesaiannya, maka angkah-langkah yang kami gunkan adalah
 
   mkdir /home/thalutn5/Documents/Soalshift1/nmr1/hasil1
 
-Setelah itu kami membuat 2 variabel, yang satu bertujuan untuk mengarahkan dimana foto itu berasal dan satu lagi bertujuan untuk 
-mengarahkan dimana foto hasil dari script kami akan diletakkan.Lalu kita membuat 2 variabel lagi. Yang pertama bernama "foto", yang bertujuan nantinya untuk menamai foto dari hasil script kami serta dimulai dari angka 0. Dan yang satu lagi bernama i yang bertujuan untuk seperti iterasi dalam looping tersebut. 
+- Setelah itu kami membuat 2 variabel, yang satu bertujuan untuk mengarahkan dimana foto itu berasal dan satu lagi bertujuan untuk 
+mengarahkan dimana foto hasil dari script kami akan diletakkan. 
+
+  fileasli=/home/thalutn5/Documents/Soalshift1/nmr1/nature/*
+ 
+  fileakhir=/home/thalutn5/Documents/Soalshift1/nmr1/hasil1
+
+- Lalu kita membuat 2 variabel lagi. Yang pertama bernama "foto", yang bertujuan nantinya untuk menamai foto dari hasil script kami serta dimulai dari angka 0. Dan yang satu lagi bernama i yang bertujuan untuk seperti iterasi dalam looping tersebut. 
 
 Didalam looping kami mengggunakan chmod 777 yang bertujuan untuk memberikan semua permission kepada semua jenis user. Setelah itu kami menggunakan base64 untuk mendecode basis64 manjadi hex dan kami menggunakan xxd -r yang berguna untuk mendecode hex menjadi file akhir(.jpg). Setelah itu kita menaikkan nilai dari variabel foto agar memiliki nama file yang berbeda dari sebelumnya di looping selanjutnya. Untuk masalah crontab, kita akan menyetting cron tab dengan 14 14 14 2 5 sesuai dengan 
 

@@ -252,7 +252,7 @@ Untuk menjawab soal ini, kita akan menggunakan awk. Dengan syarat
 
 - Dengan menuliskan '(/cron/ || /CRON/) && (!/sudo/) {print}' kita hanya bisa menampilkan yang mengandung string "cron" dan "CRON" serta tidak mengandung string "sudo". 
 - Lalu dengan menambahkan syarat (NF < 13), ini berarti memasukkan syarat number of field tidak boleh lebih dari 13.
--     >> /home/thalutn5/Soalshift1/nmr5/soal5.log   
+	    >> /home/thalutn5/Soalshift1/nmr5/soal5.log   
 
 	 Dengan menulis ini Kita memasukkan record tadi kedalam sebuah file log.
 

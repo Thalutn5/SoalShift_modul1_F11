@@ -210,15 +210,19 @@ e. dan buatkan juga bash script untuk dekripsinya.
 
 Jawab :
 
-Script untuk enkripsi :
+- Script untuk enkripsi :
 
-Untuk enkripsinya, pertama-tama kita akan membuat 5 buah variabel. Yang pertama namanya "array" yang berisikan huruf alfabet kecil,
+Untuk enkripsinya, pertama-tama kita akan membuat 5 buah variabel. 
+Yang pertama namanya "array" yang berisikan huruf alfabet kecil
+
+	array=abcdefghijklmnopqrstuvwxyz
+
 yang kedua namanya "array2" yang berisikan huruf alfabet besar, yang ketiga bernama "array3" berisikan campuran dari variabel "array2" 
 dan "array". yang keempat bernama "array4" berisikan campuran dari variabel "array" dan "array" dan yang kelima bernama "array5" 
 berisikan campuran dari variabel "array2" dan "array2". Setelah itu kita membuat variabel rotate yang berfungsi untuk menampung jam pada saat script dijalankan. kita juga akan memiliki 3 variabel yang digunakann untuk mentranslate variabel-variabel sebelumnya. variabel trans digunakan untuk mengubah variabel "array" menjadi variabel "array" yang telah ditambahkan jamnya. begitu juga dengan trans2 yang digunakan untuk mengubah variabel "array" menjadi variabel "array2" yang telah ditambahkan jamnya. Sedangkan variabel trans3 berisikan campuran dari variabel "trans" dan "trans2". setelah itu kita sebuah variabel yang bernama "hasil" dimana variabel tersebut mentranslate dari variabel array3 menjadi trans3 
 untuk menyimpan hasil log terebut.
 
-Script untuk dekripsi :  
+- Script untuk dekripsi :  
 
 Untuk mendekripsi hampir sama dengan enkripsinya, tetapi kita menambahkan variabel jam dimana akan kita gunakan di variabel rotate serta merubah translate pada hasil output dari variabel trans3 menjadi array3
 
@@ -244,7 +248,7 @@ Jawab :
 
 Untuk menjawab soal ini, kita akan menggunakan awk. Dengan syarat 
 
-awk '(/cron/ || /CRON/) && (!/sudo/) && (NF < 13) {print}' /var/log/syslog >> /home/thalutn5/Soalshift1/nmr5/nmr5.log
+	awk '(/cron/ || /CRON/) && (!/sudo/) && (NF < 13) {print}' /var/log/syslog >> /home/thalutn5/Soalshift1/nmr5/nmr5.log
 
 - Dengan menuliskan '(/cron/ || /CRON/) && (!/sudo/) {print}' kita hanya bisa menampilkan yang mengandung string "cron" dan "CRON" serta tidak mengandung string "sudo". 
 - Lalu dengan menambahkan syarat (NF < 13), ini berarti memasukkan syarat number of field tidak boleh lebih dari 13.

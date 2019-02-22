@@ -71,24 +71,23 @@ Fungsi If sama seperti 2A ditambah asumsi “United States” sebagai negara pal
 
 Untuk pencarian 3 productline tertinggi dilakukan hal dibawah ini :
 
-    1.  “ for(i in maxprod) {     		#  i = $4
+    1.   for(i in maxprod)     		
 If pertama ( if (maxprod[i] . maxprod1){ ) untuk mencari productline tertinggi
 Dengan syntax diatas maka yang terisi terakhir dan terbesar adalah data prod1.
-
-    2. “else if (maxprod[i] > maxprod2) { 
+    
+    2. else if (maxprod[i] > maxprod2) 
 Kondisi dimana data yang baru diproses lebih kecil dari maxprod1 namun lebih besar dari maxprod2. Dengan syntax diatas maka yang terisi terakhir dan terbesar adalah data prod2.
-    3. “else if (maxprod[i] > maxprod3) {
+
+    3. else if (maxprod[i] > maxprod3) 
 Kondisi dimana data yang baru diproses lebih kecil dari maxprod1 namun lebih besar dari maxprod3. Dengan syntax diatas maka yang terisi terakhir dan terbesar adalah data prod3.
 
 Semua data sudah dapat dengan tepat, di outputkan dengan :
 
 Print “1.”, prod1, “dengan total”, maxprod1
+
 Print “2.”, prod1, “dengan total”, maxprod2
+
 Print “3.”, prod1, “dengan total”, maxprod3
-
-
-
-
 
     (C) Tentukan 3 product yang memberikan penjualan(quantity) terbanyak berdasarkan 3 product line yang didapatkan pada poin B
 Dengan asumsi 3 Productline tertinggi sudah ditemukan dari no 2B

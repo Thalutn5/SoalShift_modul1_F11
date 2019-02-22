@@ -280,7 +280,7 @@ d. Jalankan script tadi setiap 6 menit dari menit ke 2 hingga 30, contoh 13:02, 
 
 Jawab :
 
-Untuk menjawab soal ini, kita akan menggunakan awk. Dengan syarat 
+Untuk menjawab soal ini, kita akan menggunakan awk. Dengan syarat :
 
 	awk '(/cron/ || /CRON/) && (!/sudo/) && (NF < 13) {print}' /var/log/syslog >> /home/thalutn5/Soalshift1/nmr5/nmr5.log
 

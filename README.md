@@ -189,17 +189,22 @@ Jawab :
 
 		i=0
 
-- jika script ini dijalankan lagi maka, script ini akan mengecek apakah password1.txt itu ada? karena kita telah membuat sebelumnya maka nilai dari fileke akan ditambah 1 agar bisa memuat file password2.txt. setelah itu looping lagi dan masuk ke else dimana ia akan membuat file password2.txt . begitu juga selanjutnya. 
+- Jika script ini dijalankan lagi maka, script ini akan mengecek apakah password1.txt itu ada? karena kita telah membuat sebelumnya maka nilai dari fileke akan ditambah 1 agar bisa membuat file password2.txt. setelah itu looping lagi dan masuk ke else dimana ia akan membuat file password2.txt . begitu juga selanjutnya. 
 
 - Untuk file yang dihapus, misalnya kita telah membuat file password1.txt, password2.txt dan password3.txt lalu kita mendelete password2.txt .  setelah kita jalankan lagi scriptnya maka akan terbuat lagi file password2.txt hal ini terjadi karena script yang kami buat mengecek lagi dari iterasi pertama sehingga karena passworsd2.txt tidak ada maka dibuatlah password2.txt .
 
 # Nomor 4 
 
 Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”.  Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
-a. Huruf b adalah alfabet kedua, sedangkan saat ini waktu menunjukkan pukul 12, sehingga huruf b diganti dengan huruf alfabet yang memiliki urutan ke 12+2 = 14.
+a. Huruf b adalah alfabet kedua, sedangkan saat ini waktu menunjukkan pukul 12, sehingga huruf b diganti dengan huruf alfabet yang 
+memiliki urutan ke 12+2 = 14.
+
 b. Hasilnya huruf b menjadi huruf n karena huruf n adalah huruf ke empat belas, dan seterusnya.
+
 c. setelah huruf z akan kembali ke huruf a
+
 d. Backup file syslog setiap jam.
+
 e. dan buatkan juga bash script untuk dekripsinya.
 
 Jawab :
@@ -218,10 +223,14 @@ Untuk mendekripsi hampir sama dengan enkripsinya, tetapi kita menambahkan variab
 
 # Nomor 5
 Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:
+
 a. Tidak mengandung string “sudo”, tetapi mengandung string “cron”, serta buatlah pencarian stringnya tidak bersifat case sensitive,
 sehingga huruf kapital atau tidak, tidak menjadi masalah.
+
 b. Jumlah field (number of field) pada baris tersebut berjumlah kurang dari 13.
+
 c. Masukkan record tadi ke dalam file logs yang berada pada direktori /home/[user]/modul1.
+
 d. Jalankan script tadi setiap 6 menit dari menit ke 2 hingga 30, contoh 13:02, 13:08, 13:14, dst.
 
 Jawab :

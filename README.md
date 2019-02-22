@@ -217,9 +217,23 @@ Yang pertama namanya "array" yang berisikan huruf alfabet kecil
 
 	array=abcdefghijklmnopqrstuvwxyz
 
-yang kedua namanya "array2" yang berisikan huruf alfabet besar, yang ketiga bernama "array3" berisikan campuran dari variabel "array2" 
-dan "array". yang keempat bernama "array4" berisikan campuran dari variabel "array" dan "array" dan yang kelima bernama "array5" 
-berisikan campuran dari variabel "array2" dan "array2". Setelah itu kita membuat variabel rotate yang berfungsi untuk menampung jam pada saat script dijalankan. kita juga akan memiliki 3 variabel yang digunakann untuk mentranslate variabel-variabel sebelumnya. variabel trans digunakan untuk mengubah variabel "array" menjadi variabel "array" yang telah ditambahkan jamnya. begitu juga dengan trans2 yang digunakan untuk mengubah variabel "array" menjadi variabel "array2" yang telah ditambahkan jamnya. Sedangkan variabel trans3 berisikan campuran dari variabel "trans" dan "trans2". setelah itu kita sebuah variabel yang bernama "hasil" dimana variabel tersebut mentranslate dari variabel array3 menjadi trans3 
+Yang kedua namanya "array2" yang berisikan huruf alfabet besar
+
+	array2=ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+Yang ketiga bernama "array3" berisikan campuran dari variabel "array2" dan "array".
+
+	array3=($(echo ${array2[@]})$(echo ${array[@]}))
+
+Yang keempat bernama "array4" berisikan campuran dari variabel "array" dan "array"
+
+	array4=($(echo ${array[@]})$(echo ${array[@]}))
+
+Dan yang kelima bernama "array5" berisikan campuran dari variabel "array2" dan "array2".
+
+	array5=($(echo ${array2[@]})$(echo ${array2[@]}))
+
+Setelah itu kita membuat variabel rotate yang berfungsi untuk menampung jam pada saat script dijalankan. kita juga akan memiliki 3 variabel yang digunakann untuk mentranslate variabel-variabel sebelumnya. variabel trans digunakan untuk mengubah variabel "array" menjadi variabel "array" yang telah ditambahkan jamnya. begitu juga dengan trans2 yang digunakan untuk mengubah variabel "array" menjadi variabel "array2" yang telah ditambahkan jamnya. Sedangkan variabel trans3 berisikan campuran dari variabel "trans" dan "trans2". setelah itu kita sebuah variabel yang bernama "hasil" dimana variabel tersebut mentranslate dari variabel array3 menjadi trans3 
 untuk menyimpan hasil log terebut.
 
 - Script untuk dekripsi :  
@@ -258,7 +272,9 @@ Untuk menjawab soal ini, kita akan menggunakan awk. Dengan syarat
 	Dengan menulis ini Kita memasukkan record tadi kedalam sebuah file log.
 
 - Serta kita juga menambahkan sebuah line pada crontab -e agar hanya bisa di jalankan pada etiap 6 menit dari menit ke 2 hingga 30
-dengan mengganti tanda * pertama dengan 2-30/6. (2-30/6 * * * *)
+dengan mengganti tanda * pertama dengan 2-30/6. 
+
+	2-30/6 * * * * /bin/bash /home/thalutn5/Documents/Soalshift1/nmr5/soal5.sh
 
 
 

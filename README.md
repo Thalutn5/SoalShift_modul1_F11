@@ -1,6 +1,20 @@
 # SoalShift_modul1_F11
 
-No.2
+M Thalut Nadhil Q (05111740000143)
+ dan Ida Bagus Rai Widnyana (05111740000087)
+
+# Nomor 1
+Anda diminta tolong oleh teman anda untuk mengembalikan filenya yang telah dienkripsi oleh seseorang menggunakan bash script, file yang dimaksud adalah nature.zip. Karena terlalu mudah kalian memberikan syarat akan membuka seluruh file tersebut jika pukul 14:14 pada tanggal 14 Februari atau hari tersebut adalah hari jumat pada bulan Februari.Hint: Base64, Hexdump
+
+Jawab :
+
+Untuk penyelesaiannya, pertama-tama kami membuat sebuah folder yang bertujuan untuk menyimpan foto hasil dari script kami. 
+Setelah itu kami membuat 2 variabel, yang satu bertujuan untuk mengarahkan dimana foto itu berasal dan satu lagi bertujuan untuk 
+mengarahkan dimana foto hasil dari script kami akan diletakkan.
+
+Lalu kita membuat 2 variabel lagi. Yang pertama bernama "foto", yang bertujuan nantinya untuk menamai foto dari hasil script kami serta dimulai dari angka 0. Dan yang satu lagi bernama i yang bertujuan untuk seperti iterasi dalam looping tersebut. Didalam looping kami mengggunakan chmod 777 yang bertujuan untuk memberikan semua permission kepada semua jenis user. Setelah itu kami menggunakan base64 untuk mendecode basis64 manjadi hex dan kami menggunakan xxd -r yang berguna untuk mendecode hex menjadi file akhir(.jpg). Setelah itu kita menaikkan nilai dari variabel foto agar memiliki nama file yang berbeda dari sebelumnya di looping selanjutnya.
+
+# Nomor 2
 
     (A) Tentukan negara dengan penjualan(quantity) terbanyak per tahun 2012
 Data yang dibutuhkan : Nama negara, dan quantitynya per tahun 2012
@@ -9,7 +23,7 @@ Variabel yang dibutuhkan :
     • “negara=”a” 	// untuk iterasi negara
 
 	
-	Kami menggunakan awk untuk mengsort data excel tersebut. Sebelumnya kami menggunakan “,” sebagai delimeter agar fungsi “$N” yang tadinya memanggil per kata (urut) menjadi memanggil semua data yang ada perkolomnya. Hal ini dilakukan karerna pada kolom pertama jumlah kata nama negara berbeda-beda. Jika tidak dilakukan akan terjadi pengambilan data yang berbeda karena urutan tak sama.
+Kami menggunakan awk untuk mengsort data excel tersebut. Sebelumnya kami menggunakan “,” sebagai delimeter agar fungsi “$N” yang tadinya memanggil per kata (urut) menjadi memanggil semua data yang ada perkolomnya. Hal ini dilakukan karerna pada kolom pertama jumlah kata nama negara berbeda-beda. Jika tidak dilakukan akan terjadi pengambilan data yang berbeda karena urutan tak sama.
 Yang dilakukan adalah menggabungkan quantity semua jenis barang per negara pada tahun 2012 dan mengeluarkan output negara dengan jumlah quantity terbanyak.
 
 
@@ -84,7 +98,57 @@ print “2.C”, “Personal Accessories:”, proda, “dengan total”, maxprod
 print “Camping Equipment:”, prodb, “dengan total”, maxprodb
 print “Outdoor Protection:”, prodc, “dengan total”, maxprodc
  
-	
+# Nomor 3
+Buatlah sebuah script bash yang dapat menghasilkan password secara acaksebanyak 12 karakter yang terdapat huruf besar, huruf kecil, dan angka. Password acak tersebut disimpan pada file berekstensi .txt dengan ketentuan pemberian nama sebagai berikut:
+a. Jika tidak ditemukan file password1.txt maka password acak tersebut disimpan pada file bernama password1.txt
+b. Jika file password1.txt sudah ada maka password acak baru akan disimpan pada file bernama password2.txt dan begitu seterusnya.
+c. Urutan nama file tidak boleh ada yang terlewatkan meski filenya dihapus.
+d. Password yang dihasilkan tidak boleh sama.
+
+Jawab :
+
+Untuk menyelesaikan soal ini, pertama-tama kami membuat 2 variabel. Yang pertama kami namai i, yang bertujuan untuk iterasi. dan yang kedua bernama fileke, yang bertujuan untuk memberi nilai angka pada penamaan file dalam looping. Didalam looping, kita memberikan syarat bahwa nilai i tidak boleh sama dengan 0, jika nilai i sama dengan 0 maka ia akan keluar dari looping tersebut. di dalam looping terdapat percabangan, ada if dan ada else. if disini berguna untuk mengecek apakah ada file password1.txt atau belum. jika belum maka ia akan lari ke else dimana isi dari else tersebut adalah membuat sebuah file password1.txt yang berisikan string random dengan 
+syarat huruf a-z, A-Z dan 0-9 sepanjang 12 huruf dan sebanyak 1 baris. serta di folder tertentu. setelah membuat file tersebut, kita menaikkan nilai dari i agar bisa keluar dari looping tersebut. jika script ini dijalankan lagi maka, script ini akan mengecek apakah password1.txt itu ada? karena kita telah membuat sebelumnya maka nilai dari fileke akan ditambah 1 agar bisa memuat file password2.txt. setelah itu looping lagi dan masuk ke else dimana ia akan membuat file password2.txt . begitu juga selanjutnya. Untuk file yang dihapus, misalnya kita telah membuat file password1.txt, password2.txt dan password3.txt lalu kita mendelete password2.txt .  setelah kita jalankan lagi scriptnya maka akan terbuat lagi file password2.txt hal ini terjadi karena script yang kami buat mengecek lagi dari iterasi pertama sehingga karena passworsd2.txt tidak ada maka dibuatlah password2.txt .
+
+# Nomor 4 
+
+Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”.  Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
+a. Huruf b adalah alfabet kedua, sedangkan saat ini waktu menunjukkan pukul 12, sehingga huruf b diganti dengan huruf alfabet yang memiliki urutan ke 12+2 = 14.
+b. Hasilnya huruf b menjadi huruf n karena huruf n adalah huruf ke empat belas, dan seterusnya.
+c. setelah huruf z akan kembali ke huruf a
+d. Backup file syslog setiap jam.
+e. dan buatkan juga bash script untuk dekripsinya.
+
+Jawab :
+
+Script untuk enkripsi :
+
+Untuk enkripsinya, pertama-tama kita akan membuat 5 buah variabel. Yang pertama namanya "array" yang berisikan huruf alfabet kecil,
+yang kedua namanya "array2" yang berisikan huruf alfabet besar, yang ketiga bernama "array3" berisikan campuran dari variabel "array2" 
+dan "array". yang keempat bernama "array4" berisikan campuran dari variabel "array" dan "array" dan yang kelima bernama "array5" 
+berisikan campuran dari variabel "array2" dan "array2". Setelah itu kita membuat variabel rotate yang berfungsi untuk menampung jam pada saat script dijalankan. kita juga akan memiliki 3 variabel yang digunakann untuk mentranslate variabel-variabel sebelumnya. variabel trans digunakan untuk mengubah variabel "array" menjadi variabel "array" yang telah ditambahkan jamnya. begitu juga dengan trans2 yang digunakan untuk mengubah variabel "array" menjadi variabel "array2" yang telah ditambahkan jamnya. Sedangkan variabel trans3 berisikan campuran dari variabel "trans" dan "trans2". setelah itu kita sebuah variabel yang bernama "hasil" dimana variabel tersebut mentranslate dari variabel array3 menjadi trans3 
+untuk menyimpan hasil log terebut.
+
+Script untuk dekripsi :  
+
+Untuk mendekripsi hampir sama dengan enkripsinya, tetapi kita menambahkan variabel jam dimana akan kita gunakan di variabel rotate serta merubah translate pada hasil output dari variabel trans3 menjadi array3
+
+# Nomor 5
+Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:
+a. Tidak mengandung string “sudo”, tetapi mengandung string “cron”, serta buatlah pencarian stringnya tidak bersifat case sensitive,
+sehingga huruf kapital atau tidak, tidak menjadi masalah.
+b. Jumlah field (number of field) pada baris tersebut berjumlah kurang dari 13.
+c. Masukkan record tadi ke dalam file logs yang berada pada direktori /home/[user]/modul1.
+d. Jalankan script tadi setiap 6 menit dari menit ke 2 hingga 30, contoh 13:02, 13:08, 13:14, dst.
+
+Jawab :
+
+Untuk menjawab soal ini, kita akan menggunakan awk. Dengan syarat 
+awk '(/cron/ || /CRON/) && (!/sudo/) && (NF < 13) {print}' /var/log/syslog >> /home/thalutn5/Soalshift1/nmr5/nmr5.sh
+dimana hanya bisa menampilkan yang mengandung string "cron" dan "CRON" serta tidak mengandung string "sudo". Selain itu kita
+memasukkan syarat number of field tidak boleh lebih dari 13. Dan yang terakhir memasukkan record tadi kedalam sebuah file log.
+Serta kita juga menambahkan line pada crontab -e agar hanya bisa di jalankan pada etiap 6 menit dari menit ke 2 hingga 30
+dengan mengganti tanda * pertama dengan 2-30/6. 
 
 
 

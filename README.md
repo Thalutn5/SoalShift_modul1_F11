@@ -16,10 +16,14 @@ Lalu kita membuat 2 variabel lagi. Yang pertama bernama "foto", yang bertujuan n
 
 # Nomor 2
 
+Anda merupakan pegawai magang pada sebuah perusahaan retail, dan anda diminta untuk memberikan laporan berdasarkan file WA_Sales_Products_2012-14.csv. Laporan yang diminta berupa:
+
     (A) Tentukan negara dengan penjualan(quantity) terbanyak per tahun 2012
 Data yang dibutuhkan : Nama negara, dan quantitynya per tahun 2012
 Variabel yang dibutuhkan : 
+
     • “max=0”   	//untuk iterasi maksimum quantity
+    
     • “negara=”a” 	// untuk iterasi negara
 
 	
@@ -29,19 +33,19 @@ Yang dilakukan adalah menggabungkan quantity semua jenis barang per negara pada 
 
 
 If($7 == “2012) {   		# agar data yang disort hanya pada tahun 2012
+
 Total [$1] = total [$1] + $10 	# array untuk mentotalkan jumlah quantity per negara
+
 If (total[$1] > max) {		# fungsi untuk mencari jumlah quantity paling banyak
+
 max = total[$1]			# setelah itu max bernilai total[$1]
-negara = $1			# setelah itu negara bernilai negara di kolom pertama yang memiliki				   quantity terbanyak.
 
-
- 
+negara = $1			# setelah itu negara bernilai negara di kolom pertama yang memiliki quantity terbanyak.				
 setelah mendapatkan isi “negara” dan “max” di outputkan dengan format :
+	
 	“print negara, max”
+
 Lalu di bash no2.sh
-
-
-
 
     (B) Tentukan 3 product line yang memberikan penjualan(quantity) terbanyak pada poin A
 

@@ -233,8 +233,28 @@ Dan yang kelima bernama "array5" berisikan campuran dari variabel "array2" dan "
 
 	array5=($(echo ${array2[@]})$(echo ${array2[@]}))
 
-Setelah itu kita membuat variabel rotate yang berfungsi untuk menampung jam pada saat script dijalankan. kita juga akan memiliki 3 variabel yang digunakann untuk mentranslate variabel-variabel sebelumnya. variabel trans digunakan untuk mengubah variabel "array" menjadi variabel "array" yang telah ditambahkan jamnya. begitu juga dengan trans2 yang digunakan untuk mengubah variabel "array" menjadi variabel "array2" yang telah ditambahkan jamnya. Sedangkan variabel trans3 berisikan campuran dari variabel "trans" dan "trans2". setelah itu kita sebuah variabel yang bernama "hasil" dimana variabel tersebut mentranslate dari variabel array3 menjadi trans3 
+Setelah itu kita membuat variabel rotate yang berfungsi untuk menampung jam pada saat script dijalankan.
+
+	rotate=`date +"%H"`
+
+Kita juga akan memiliki 3 variabel yang digunakann untuk mentranslate variabel-variabel sebelumnya. 
+
+Variabel trans digunakan untuk mengubah variabel "array" menjadi variabel "array4" yang telah ditambahkan jamnya. 
+
+	trans=$(echo $array | tr "${array:0:26}" "${array4:${rotate}:26}")
+
+Begitu juga dengan trans2 yang digunakan untuk mengubah variabel "array2" menjadi variabel "array5" yang telah ditambahkan jamnya.
+
+	trans2=$(echo $array2 | tr "${array2:0:26}" "${array5:${rotate}:26}")
+
+Sedangkan variabel trans3 berisikan campuran dari variabel "trans" dan "trans2". 
+
+	trans3=($(echo ${trans2[@]})$(echo ${trans[@]}))
+
+setelah itu kita sebuah variabel yang bernama "hasil" dimana variabel tersebut mentranslate dari variabel array3 menjadi trans3 
 untuk menyimpan hasil log terebut.
+
+	< /var/log/syslog > "$hasil" tr "${array3}" "${trans3}" 
 
 - Script untuk dekripsi :  
 
@@ -274,7 +294,7 @@ Untuk menjawab soal ini, kita akan menggunakan awk. Dengan syarat
 - Serta kita juga menambahkan sebuah line pada crontab -e agar hanya bisa di jalankan pada etiap 6 menit dari menit ke 2 hingga 30
 dengan mengganti tanda * pertama dengan 2-30/6. 
 
-	2-30/6 * * * * /bin/bash /home/thalutn5/Documents/Soalshift1/nmr5/soal5.sh
+		2-30/6 * * * * /bin/bash /home/thalutn5/Documents/Soalshift1/nmr5/soal5.sh
 
 
 

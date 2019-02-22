@@ -11,40 +11,40 @@ Jawab :
 Untuk penyelesaiannya, maka langkah-langkah yang kami gunkan adalah
 - Membuka file nature.zip maka kita menggunakan syntax
 
-  unzip /home/thalutn5/Documents/Soalshift1/nmr1/nature.zip
+ 	 unzip /home/thalutn5/Documents/Soalshift1/nmr1/nature.zip
 
 - Setelah itu kita membuat sebuah folder yang bertujuan untuk menyimpan foto hasil dari script kami. 
 
-  mkdir /home/thalutn5/Documents/Soalshift1/nmr1/hasil1
+  	mkdir /home/thalutn5/Documents/Soalshift1/nmr1/hasil1
 
 - Setelah itu kami membuat 2 variabel, yang satu bertujuan untuk mengarahkan dimana foto itu berasal dan satu lagi bertujuan untuk 
 mengarahkan dimana foto hasil dari script kami akan diletakkan. 
 
-  fileasli=/home/thalutn5/Documents/Soalshift1/nmr1/nature/*
+ 	 fileasli=/home/thalutn5/Documents/Soalshift1/nmr1/nature/*
  
-  fileakhir=/home/thalutn5/Documents/Soalshift1/nmr1/hasil1
+  	fileakhir=/home/thalutn5/Documents/Soalshift1/nmr1/hasil1
 
 - Lalu kita membuat 2 variabel lagi. Yang pertama bernama "foto", yang bertujuan nantinya untuk menamai foto dari hasil script kami serta dimulai dari angka 0. Dan yang satu lagi bernama i yang bertujuan untuk seperti iterasi dalam looping tersebut. 
 
 - Didalam looping kami mengggunakan chmod 777 yang bertujuan untuk memberikan semua permission kepada semua jenis user. 
 
-   chmod 777 $i
+  	 chmod 777 $i
 
 - Setelah itu kami menggunakan base64 untuk mendecode basis64 manjadi hex 
 
-  base64 -d $i
+  	base64 -d $i
 
 - Kami juga menggunakan xxd -r yang berguna untuk mendecode hex menjadi file akhir(.jpg). 
 	
-   xxd -r > $fileakhir/$foto.jpg
+  	 xxd -r > $fileakhir/$foto.jpg
 
 - Setelah itu kita menaikkan nilai dari variabel foto agar memiliki nama file yang berbeda dari sebelumnya di looping selanjutnya. 
 
-  let foto=$foto+1
+  	let foto=$foto+1
 
 - Untuk masalah crontab, kita akan menyetting cron tab dengan 14 14 14 2 5 sesuai dengan menit, jam, tanggal, bulan, hari
 
-  14 14 14 2 5 /bin/bash /home/thalutn5/Documents/Soalshift1/nmr1/soal1.sh
+ 	 14 14 14 2 5 /bin/bash /home/thalutn5/Documents/Soalshift1/nmr1/soal1.sh
 
 # Nomor 2
 

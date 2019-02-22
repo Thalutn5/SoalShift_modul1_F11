@@ -167,7 +167,7 @@ Jawab :
 	
 - Didalam looping, kita memberikan syarat bahwa nilai i tidak boleh sama dengan 0, jika nilai i sama dengan 0 maka ia akan keluar dari looping tersebut. di dalam looping terdapat percabangan, ada if dan ada else. 
 
-  	while [ $i -ne 0 ]
+  		while [ $i -ne 0 ]
 
  		do
 

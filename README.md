@@ -173,7 +173,7 @@ awk '(/cron/ || /CRON/) && (!/sudo/) && (NF < 13) {print}' /var/log/syslog >> /h
 
 - Dengan menuliskan '(/cron/ || /CRON/) && (!/sudo/) {print}' kita hanya bisa menampilkan yang mengandung string "cron" dan "CRON" serta tidak mengandung string "sudo". 
 - Lalu dengan menambahkan syarat (NF < 13), ini berarti memasukkan syarat number of field tidak boleh lebih dari 13.
-- >> /home/thalutn5/Soalshift1/nmr5/soal5.log   Dengan menulis ini Kita memasukkan record tadi kedalam sebuah file log.
+-     >> /home/thalutn5/Soalshift1/nmr5/soal5.log   Dengan menulis ini Kita memasukkan record tadi kedalam sebuah file log.
 - Serta kita juga menambahkan sebuah line pada crontab -e agar hanya bisa di jalankan pada etiap 6 menit dari menit ke 2 hingga 30
 dengan mengganti tanda * pertama dengan 2-30/6. (2-30/6 * * * *)
 

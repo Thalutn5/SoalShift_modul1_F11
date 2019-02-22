@@ -166,14 +166,24 @@ Jawab :
   fileke=1
 
 - Didalam looping, kita memberikan syarat bahwa nilai i tidak boleh sama dengan 0, jika nilai i sama dengan 0 maka ia akan keluar dari looping tersebut. di dalam looping terdapat percabangan, ada if dan ada else. 
+
+  while [ $i -ne 0 ]
+
+ 	do
+
 - if disini berguna untuk mengecek apakah ada file password1.txt atau belum. 
 
   if [[ -f /home/thalutn5/Documents/Soalshift1/nmr3/password$fileke.txt ]];
 
 	then
+	
 		fileke=$((fileke + 1))
 
 - jika belum maka ia akan lari ke else dimana isi dari else tersebut adalah membuat sebuah file password1.txt yang berisikan string random dengan syarat huruf a-z, A-Z dan 0-9 sepanjang 12 huruf dan sebanyak 1 baris. serta di folder tertentu. 
+
+	else
+	
+	cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1 > /home/thalutn5/Documents/Soalshift1/nmr3/password$fileke.txt
 
 Setelah membuat file tersebut, kita menaikkan nilai dari i agar bisa keluar dari looping tersebut. jika script ini dijalankan lagi maka, script ini akan mengecek apakah password1.txt itu ada? karena kita telah membuat sebelumnya maka nilai dari fileke akan ditambah 1 agar bisa memuat file password2.txt. setelah itu looping lagi dan masuk ke else dimana ia akan membuat file password2.txt . begitu juga selanjutnya. 
 

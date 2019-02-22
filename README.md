@@ -38,7 +38,11 @@ mengarahkan dimana foto hasil dari script kami akan diletakkan.
 	
    xxd -r > $fileakhir/$foto.jpg
 
-- Setelah itu kita menaikkan nilai dari variabel foto agar memiliki nama file yang berbeda dari sebelumnya di looping selanjutnya. Untuk masalah crontab, kita akan menyetting cron tab dengan 14 14 14 2 5 sesuai dengan menit, jam, tanggal, bulan, hari
+- Setelah itu kita menaikkan nilai dari variabel foto agar memiliki nama file yang berbeda dari sebelumnya di looping selanjutnya. 
+
+  let foto=$foto+1
+
+- Untuk masalah crontab, kita akan menyetting cron tab dengan 14 14 14 2 5 sesuai dengan menit, jam, tanggal, bulan, hari
 
   14 14 14 2 5 /bin/bash /home/thalutn5/Documents/Soalshift1/nmr1/soal1.sh
 

@@ -127,8 +127,10 @@ d. Password yang dihasilkan tidak boleh sama.
 
 Jawab :
 
-Untuk menyelesaikan soal ini, pertama-tama kami membuat 2 variabel. Yang pertama kami namai i, yang bertujuan untuk iterasi. dan yang kedua bernama fileke, yang bertujuan untuk memberi nilai angka pada penamaan file dalam looping. Didalam looping, kita memberikan syarat bahwa nilai i tidak boleh sama dengan 0, jika nilai i sama dengan 0 maka ia akan keluar dari looping tersebut. di dalam looping terdapat percabangan, ada if dan ada else. if disini berguna untuk mengecek apakah ada file password1.txt atau belum. jika belum maka ia akan lari ke else dimana isi dari else tersebut adalah membuat sebuah file password1.txt yang berisikan string random dengan 
-syarat huruf a-z, A-Z dan 0-9 sepanjang 12 huruf dan sebanyak 1 baris. serta di folder tertentu. setelah membuat file tersebut, kita menaikkan nilai dari i agar bisa keluar dari looping tersebut. jika script ini dijalankan lagi maka, script ini akan mengecek apakah password1.txt itu ada? karena kita telah membuat sebelumnya maka nilai dari fileke akan ditambah 1 agar bisa memuat file password2.txt. setelah itu looping lagi dan masuk ke else dimana ia akan membuat file password2.txt . begitu juga selanjutnya. 
+Karena sebelum dibash belum ada file yang terbuat maka,agar dapat membuat file tersebut hal yang harus dilakukan pertama-tama adalah kami membuat 2 variabel. Yang pertama kami namai i, yang bertujuan untuk iterasi. dan yang kedua bernama fileke, yang bertujuan untuk memberi nilai angka pada penamaan file dalam looping. Didalam looping, kita memberikan syarat bahwa nilai i tidak boleh sama dengan 0, jika nilai i sama dengan 0 maka ia akan keluar dari looping tersebut. di dalam looping terdapat percabangan, ada if dan ada else. if disini berguna untuk mengecek apakah ada file password1.txt atau belum. jika belum maka ia akan lari ke else dimana isi dari else tersebut adalah membuat sebuah file password1.txt yang berisikan string random dengan 
+syarat huruf a-z, A-Z dan 0-9 sepanjang 12 huruf dan sebanyak 1 baris. serta di folder tertentu. 
+
+Setelah membuat file tersebut, kita menaikkan nilai dari i agar bisa keluar dari looping tersebut. jika script ini dijalankan lagi maka, script ini akan mengecek apakah password1.txt itu ada? karena kita telah membuat sebelumnya maka nilai dari fileke akan ditambah 1 agar bisa memuat file password2.txt. setelah itu looping lagi dan masuk ke else dimana ia akan membuat file password2.txt . begitu juga selanjutnya. 
 
 Untuk file yang dihapus, misalnya kita telah membuat file password1.txt, password2.txt dan password3.txt lalu kita mendelete password2.txt .  setelah kita jalankan lagi scriptnya maka akan terbuat lagi file password2.txt hal ini terjadi karena script yang kami buat mengecek lagi dari iterasi pertama sehingga karena passworsd2.txt tidak ada maka dibuatlah password2.txt .
 
@@ -167,12 +169,13 @@ Jawab :
 
 Untuk menjawab soal ini, kita akan menggunakan awk. Dengan syarat 
 
-awk '(/cron/ || /CRON/) && (!/sudo/) && (NF < 13) {print}' /var/log/syslog >> /home/thalutn5/Soalshift1/nmr5/nmr5.sh
+awk '(/cron/ || /CRON/) && (!/sudo/) && (NF < 13) {print}' /var/log/syslog >> /home/thalutn5/Soalshift1/nmr5/nmr5.log
 
-dimana hanya bisa menampilkan yang mengandung string "cron" dan "CRON" serta tidak mengandung string "sudo". Selain itu kita
-memasukkan syarat number of field tidak boleh lebih dari 13. Dan yang terakhir memasukkan record tadi kedalam sebuah file log.
-Serta kita juga menambahkan line pada crontab -e agar hanya bisa di jalankan pada etiap 6 menit dari menit ke 2 hingga 30
-dengan mengganti tanda * pertama dengan 2-30/6. 
+- Dengan menuliskan '(/cron/ || /CRON/) && (!/sudo/) {print}' kita hanya bisa menampilkan yang mengandung string "cron" dan "CRON" serta tidak mengandung string "sudo". 
+- Lalu dengan menambahkan syarat (NF < 13), ini berarti memasukkan syarat number of field tidak boleh lebih dari 13.
+- >> /home/thalutn5/Soalshift1/nmr5/soal5.log   Dengan menulis ini Kita memasukkan record tadi kedalam sebuah file log.
+- Serta kita juga menambahkan sebuah line pada crontab -e agar hanya bisa di jalankan pada etiap 6 menit dari menit ke 2 hingga 30
+dengan mengganti tanda * pertama dengan 2-30/6. (2-30/6 * * * *)
 
 
 

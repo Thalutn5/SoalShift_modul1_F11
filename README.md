@@ -196,6 +196,7 @@ Jawab :
 # Nomor 4 
 
 Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”.  Isi dari file backup terenkripsi dengan konversi huruf (string manipulation) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
+
 a. Huruf b adalah alfabet kedua, sedangkan saat ini waktu menunjukkan pukul 12, sehingga huruf b diganti dengan huruf alfabet yang 
 memiliki urutan ke 12+2 = 14.
 
@@ -220,6 +221,12 @@ untuk menyimpan hasil log terebut.
 Script untuk dekripsi :  
 
 Untuk mendekripsi hampir sama dengan enkripsinya, tetapi kita menambahkan variabel jam dimana akan kita gunakan di variabel rotate serta merubah translate pada hasil output dari variabel trans3 menjadi array3
+
+	jam=${output:0:2}
+	
+	rotate=$jam
+	
+	< "$output" > "$output dec" tr "${trans3}" "${array3}"
 
 # Nomor 5
 Buatlah sebuah script bash untuk menyimpan record dalam syslog yang memenuhi kriteria berikut:

@@ -1,0 +1,3 @@
+14 14 14 2 5 /bin/bash /home/thalutn5/Documents/Soalshift1/nmr1/soal1.sh
+@hourly /bin/bash /home/thalutn5/Documents/Soalshift1/nmr4/soal4.sh
+2-30/6 * * * * /bin/bash /home/thalutn5/Documents/Soalshift1/nmr5/soal5.sh

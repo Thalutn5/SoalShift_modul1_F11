@@ -94,17 +94,24 @@ Dengan asumsi 3 Productline tertinggi sudah ditemukan dari no 2B
 Variabel yang dibutuhkan = 
 
 Proda=”a”			# Nama produk dengan quantity tertinggi ke- 1
+
 Prodb=”a”			# Nama produk dengan quantity tertinggi ke -2
+
 Prodc= “a”			# Nama produk dengan quantity tertinggi ke -3
+
 Maxproda=0		# Quantity prod1
+
 Maxprodb=0		# Quantity prod2
+
 Maxprodc=0		# Quantity prod3
 
 Prinsip kerjanya sama seperti 2A.Perbedaannya di 2C ini product line yang di targetnya
 
 Dengan output
 print “2.C”, “Personal Accessories:”, proda, “dengan total”, maxproda
+
 print “Camping Equipment:”, prodb, “dengan total”, maxprodb
+
 print “Outdoor Protection:”, prodc, “dengan total”, maxprodc
  
 # Nomor 3

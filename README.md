@@ -161,23 +161,23 @@ Jawab :
 
 - Karena sebelum dibash belum ada file yang terbuat maka,agar dapat membuat file tersebut hal yang harus dilakukan pertama-tama adalah kami membuat 2 variabel. Yang pertama kami namai i, yang bertujuan untuk iterasi. dan yang kedua bernama fileke, yang bertujuan untuk memberi nilai angka pada penamaan file dalam looping. 
 
-  i=1
+	  i=1
   
-  fileke=1
-
+  	fileke=1
+	
 - Didalam looping, kita memberikan syarat bahwa nilai i tidak boleh sama dengan 0, jika nilai i sama dengan 0 maka ia akan keluar dari looping tersebut. di dalam looping terdapat percabangan, ada if dan ada else. 
 
-  while [ $i -ne 0 ]
+  	while [ $i -ne 0 ]
 
- 	do
+ 		do
 
 - if disini berguna untuk mengecek apakah ada file password1.txt atau belum. 
 
-  if [[ -f /home/thalutn5/Documents/Soalshift1/nmr3/password$fileke.txt ]];
+  	if [[ -f /home/thalutn5/Documents/Soalshift1/nmr3/password$fileke.txt ]];
 
-	then
+		then
 	
-	fileke=$((fileke + 1))
+		fileke=$((fileke + 1))
 
 - jika belum maka ia akan lari ke else dimana isi dari else tersebut adalah membuat sebuah file password1.txt yang berisikan string random dengan syarat huruf a-z, A-Z dan 0-9 sepanjang 12 huruf dan sebanyak 1 baris. serta di folder tertentu. 
 

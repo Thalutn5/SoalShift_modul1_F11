@@ -185,9 +185,13 @@ Jawab :
 	
 		cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1 > /home/thalutn5/Documents/Soalshift1/nmr3/password$fileke.txt
 
-Setelah membuat file tersebut, kita menaikkan nilai dari i agar bisa keluar dari looping tersebut. jika script ini dijalankan lagi maka, script ini akan mengecek apakah password1.txt itu ada? karena kita telah membuat sebelumnya maka nilai dari fileke akan ditambah 1 agar bisa memuat file password2.txt. setelah itu looping lagi dan masuk ke else dimana ia akan membuat file password2.txt . begitu juga selanjutnya. 
+- Setelah membuat file tersebut, kita menaikkan nilai dari i agar bisa keluar dari looping tersebut. 
 
-Untuk file yang dihapus, misalnya kita telah membuat file password1.txt, password2.txt dan password3.txt lalu kita mendelete password2.txt .  setelah kita jalankan lagi scriptnya maka akan terbuat lagi file password2.txt hal ini terjadi karena script yang kami buat mengecek lagi dari iterasi pertama sehingga karena passworsd2.txt tidak ada maka dibuatlah password2.txt .
+		i=0
+
+- jika script ini dijalankan lagi maka, script ini akan mengecek apakah password1.txt itu ada? karena kita telah membuat sebelumnya maka nilai dari fileke akan ditambah 1 agar bisa memuat file password2.txt. setelah itu looping lagi dan masuk ke else dimana ia akan membuat file password2.txt . begitu juga selanjutnya. 
+
+- Untuk file yang dihapus, misalnya kita telah membuat file password1.txt, password2.txt dan password3.txt lalu kita mendelete password2.txt .  setelah kita jalankan lagi scriptnya maka akan terbuat lagi file password2.txt hal ini terjadi karena script yang kami buat mengecek lagi dari iterasi pertama sehingga karena passworsd2.txt tidak ada maka dibuatlah password2.txt .
 
 # Nomor 4 
 

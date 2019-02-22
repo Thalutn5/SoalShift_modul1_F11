@@ -52,12 +52,18 @@ Lalu di bash no2.sh
 
 Data yang dibutuhkan : Product line, dan quantitynya per tahun 2012. 
 Variabel yang ada : 
-Prod1=”a”			# Nama productline dengan quantity tertinggi
-Prod2=”b”			# Nama productline dengan quantity tertinggi ke -2
-Prod3= “c”			# Nama productline dengan quantity tertinggi ke -3
-Maxprod1=0		# Quantity prod1
-Maxprod2=0		# Quantity prod2
-Maxprod3=0		# Quantity prod3
+
+Prod1=”a”			 # Nama productline dengan quantity tertinggi
+
+Prod2=”b”			 # Nama productline dengan quantity tertinggi ke -2
+
+Prod3= “c”			 # Nama productline dengan quantity tertinggi ke -3
+
+Maxprod1=0		    	 # Quantity prod1
+
+Maxprod2=0			 # Quantity prod2
+
+Maxprod3=0			 # Quantity prod3
 
 Dengan asumsi Poin A telah selesai, maka Product line hanya pada negara “United States” di tahun 2012
 
@@ -148,7 +154,9 @@ d. Jalankan script tadi setiap 6 menit dari menit ke 2 hingga 30, contoh 13:02, 
 Jawab :
 
 Untuk menjawab soal ini, kita akan menggunakan awk. Dengan syarat 
+
 awk '(/cron/ || /CRON/) && (!/sudo/) && (NF < 13) {print}' /var/log/syslog >> /home/thalutn5/Soalshift1/nmr5/nmr5.sh
+
 dimana hanya bisa menampilkan yang mengandung string "cron" dan "CRON" serta tidak mengandung string "sudo". Selain itu kita
 memasukkan syarat number of field tidak boleh lebih dari 13. Dan yang terakhir memasukkan record tadi kedalam sebuah file log.
 Serta kita juga menambahkan line pada crontab -e agar hanya bisa di jalankan pada etiap 6 menit dari menit ke 2 hingga 30

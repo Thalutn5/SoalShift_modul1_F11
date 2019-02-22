@@ -32,11 +32,11 @@ Yang dilakukan adalah menggabungkan quantity semua jenis barang per negara pada 
 
 
 
-If($7 == “2012) {   		# agar data yang disort hanya pada tahun 2012
+If($7 == “2012) {   		      # agar data yang disort hanya pada tahun 2012
 
 Total [$1] = total [$1] + $10 	# array untuk mentotalkan jumlah quantity per negara
 
-If (total[$1] > max) {		# fungsi untuk mencari jumlah quantity paling banyak
+If (total[$1] > max) {		    # fungsi untuk mencari jumlah quantity paling banyak
 
 max = total[$1]			# setelah itu max bernilai total[$1]
 

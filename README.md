@@ -179,11 +179,13 @@ Jawab :
 	
 		fileke=$((fileke + 1))
 
-- jika belum maka ia akan lari ke else dimana isi dari else tersebut adalah membuat sebuah file password1.txt yang berisikan string random dengan syarat huruf a-z, A-Z dan 0-9 sepanjang 12 huruf dan sebanyak 1 baris. serta di folder tertentu. 
+- jika belum maka ia akan lari ke else dimana isi dari else tersebut adalah membuat sebuah file password1.txt . Pada baris pertama akan membuat sebuah string huruf dari a kecil sampai z kecil dan A besar sampai Z besar sebanyak 11 huruf. Sedangkan pada baris kedua berisikan 1 digit angka random sehingga total dari 2 barus script tersebut sebanyak 12 karakter. Lalu menyimpannya di  folder tertentu.
 
 		else
 	
-		cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1 > /home/thalutn5/Documents/Soalshift1/nmr3/password$fileke.txt
+		cat /dev/urandom | tr -dc 'a-zA-Z' | head -c 11 >> /home/thalutn5/Documents/Soalshift1/nmr3/password$fileke.txt
+                cat /dev/urandom | tr -dc '0-9' | head -c 1 >> /home/thalutn5/Documents/Soalshift1/nmr3/password$fileke.txt
+
 
 - Setelah membuat file tersebut, kita menaikkan nilai dari i agar bisa keluar dari looping tersebut. 
 
